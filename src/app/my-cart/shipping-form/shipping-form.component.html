@@ -1,0 +1,55 @@
+<div class="card" [formGroup]="shippingform">
+    <div class="wrapper">
+        <div class="form-group">
+            <label>country:</label>
+            <input type="text" class="form-control" formControlName="country"
+            [ngClass]="{'input-color': submitted && f['country'].errors}" />
+            <div class="error" *ngIf="submitted && f['country'].errors">
+                <p>country is required</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label> district:</label>
+            <input type="text" class="form-control" formControlName="district"
+            [ngClass]="{'input-color': submitted && f['district'].errors}" />
+            <div class="error" *ngIf="submitted && f['district'].errors">
+                <p>district is required</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>pinCode:</label>
+            <input type="number" class="form-control" formControlName="pinCode"
+            [ngClass]="{'input-color': submitted && f['pinCode'].errors}" />
+            <div class="error" *ngIf="submitted && f['pinCode'].errors">
+                <p>pinCode is required</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>state:</label>
+            <input type="text" class="form-control" formControlName="state"
+            [ngClass]="{'input-color': submitted && f['state'].errors}" />
+            <div class="error" *ngIf="submitted && f['state'].errors">
+                <p>state is required</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>city:</label>
+            <input type="text" class="form-control" formControlName="city" 
+            [ngClass]="{'input-color': submitted && f['city'].errors}" />
+            <div class="error" *ngIf="submitted && f['city'].errors">
+                <p>city is required</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>houseNo:</label>
+            <input type="text" class="form-control" formControlName="houseNo"
+            [ngClass]="{'input-color': submitted && f['houseNo'].errors}" />
+            <div class="error" *ngIf="submitted && f['houseNo'].errors">
+                <p>houseNo is required</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="btn full-width" (click)="Save()">Submit</button>
+        </div> 
+    </div>
+</div>

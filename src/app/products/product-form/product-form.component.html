@@ -1,0 +1,39 @@
+<div class="card" [formGroup]="productForm">
+    <div class="wrapper">
+        <div class="form-group">
+            <label>Name:</label>
+            <input type="text" class="form-control" formControlName="name"
+            [ngClass]="{'input-color': submitted && f['name'].errors}" />
+            <div class="error" *ngIf="submitted && f['name'].errors">
+                <p>name is required</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label> ImgUrl:</label>
+            <input type="text" class="form-control" formControlName="imgUrl"
+            [ngClass]="{'input-color': submitted && f['imgUrl'].errors}" />
+            <div class="error" *ngIf="submitted && f['imgUrl'].errors">
+                <p>imgUrl is required</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Price:</label>
+            <input type="number" class="form-control" formControlName="price"
+            [ngClass]="{'input-color': submitted && f['imgUrl'].errors}"  />
+            <div class="error" *ngIf="submitted && f['price'].errors">
+                <p>price is required</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Description:</label>
+            <input type="text" class="form-control" formControlName="description"
+            [ngClass]="{'input-color': submitted && f['imgUrl'].errors}"  />
+            <div class="error" *ngIf="submitted && f['description'].errors">
+                <p>description is required</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="btn full-width" (click)="Save()">Submit</button>
+        </div> 
+    </div>
+</div>

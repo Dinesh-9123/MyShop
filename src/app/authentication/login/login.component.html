@@ -1,0 +1,21 @@
+<div class="login-wrapper" [formGroup]="loginForm">
+    <div class="login-box">
+        <div>
+            <div class="form-group">
+                <label>Email ID</label>
+                <input type="text" class="form-control" formControlName="email" />
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" formControlName="password" />
+                <p style="color: red; cursor:pointer; margin: 7px;"><a>forget password</a></p>
+            </div>
+            <div class="form-group">
+                <button class="btn full-width" (click)="Login()">Submit</button>
+            </div> 
+            <div class="login-page" style="margin-bottom:70px">
+                    <p>need an account?<span> <a (click)="SignUp()" style="cursor: pointer;" >SignUp</a></span></p>        
+            </div>
+        </div>
+    </div>
+</div>        

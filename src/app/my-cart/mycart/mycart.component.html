@@ -1,0 +1,23 @@
+<div class = "total">
+    <span>Total Amount</span>
+    <span class="amount-total">${{totalAmount}}</span>
+</div>
+<div class = "actions">
+  <button class = "button">Order</button>
+  </div>
+
+<div class="wrapper">
+    <div *ngFor="let x of cartItems">
+      <li class="cart-item"> 
+        <h2>{{x.name}}</h2>
+        <div class= "summary">
+          <span style="margin-left: 80px;" class = "price">${{x.price}}</span>
+        </div>     
+        <div class = "actions">
+          <button (click)="removeFromCart(x)">−</button>
+          <span class = "amount">{{x.quantity}}</span>
+          <button (click)="addMoreInCart(x)">+</button>
+        </div>
+      </li>
+    </div>
+</div>

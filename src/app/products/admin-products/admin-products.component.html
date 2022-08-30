@@ -1,0 +1,22 @@
+<div class="addButton">
+    <button class="button" (click)="AddNewProduct()">Add New Product</button>
+</div>
+
+<div class="wrapper">
+    <div class="card" *ngFor="let x of products">
+        <li class="meal">
+            <img class="img" [src]=x.imgUrl>
+             <div class="description"> <div class="name"><h3>{{x.name}}</h3></div>{{x.description}}</div>
+            <div>
+                <div class="form">
+                    <span class="price">${{x.price}}</span> 
+                </div>
+            </div>
+        </li>
+        <div class="buttens">
+            <button class="button" (click)="EditProduct(x)">Edit</button>
+            <button class="button" (click)="PreviewProduct(x)">Priview</button>
+            <button class="button" (click)="DeleteProduct(x)">Delete</button>
+        </div>
+    </div>
+</div>

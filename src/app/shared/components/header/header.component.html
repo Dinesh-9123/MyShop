@@ -1,0 +1,11 @@
+<header class="header">
+    <div class="logo">MyShop</div>
+    <nav>
+      <ul>
+        <li routerLink="/products">Products</li>
+        <li routerLink="/cart">Cart</li>
+        <li *ngIf="isLoggedIn"><button (click)="logOut()">LogOut</button></li>
+        <li *ngIf="!isLoggedIn" routerLink="/auth"><button>LogIn</button></li>
+      </ul>
+    </nav>
+</header>

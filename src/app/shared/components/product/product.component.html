@@ -1,0 +1,13 @@
+<div class="wrapper">
+    <div class="card" *ngFor="let x of Products">
+        <li class="meal">
+            <img class="img" [src]=x.imgUrl>
+             <div class="description"> <div class="name"><h3>{{x.name}}</h3></div>{{x.description}}</div>
+            <div>
+                <div class="form">
+                    <span class="price">${{x.price}}</span> <button class="button" (click)="addToCart(x)">+Add</button>
+                </div>
+            </div>
+        </li>
+    </div>
+</div>
