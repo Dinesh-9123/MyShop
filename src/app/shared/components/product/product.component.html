@@ -1,13 +1,18 @@
-<div class="wrapper">
-    <div class="card" *ngFor="let x of Products">
-        <li class="meal">
-            <img class="img" [src]=x.imgUrl>
-             <div class="description"> <div class="name"><h3>{{x.name}}</h3></div>{{x.description}}</div>
-            <div>
-                <div class="form">
-                    <span class="price">${{x.price}}</span> <button class="button" (click)="addToCart(x)">+Add</button>
-                </div>
-            </div>
-        </li>
+<div class="product-wripper">
+    <div class="product"*ngFor="let x of Products">
+        <h1 class="title">{{x.name}}</h1>
+        <div class="images">
+            <img [src]=x.imgUrl class="img"> 
+        </div>
+        <div class="description">
+            <p>{{x.description}}</p>
+        </div>
+        <div class="price">
+            <p>${{x.price}}</p>
+        </div>
+        <div class="buttons">
+            <button class="btn">view</button>
+            <button class="btn" (click)="addToCart(x)">+Add</button>
+        </div>
     </div>
 </div>

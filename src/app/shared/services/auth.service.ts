@@ -1,6 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject, tap } from 'rxjs';
+import { adminServiceUrls } from 'src/app/config/admin';
 import { credencialServiceUrl } from '../../config/credecial';
 import { AuthUser } from '../../models/auth-user.model';
 import { LoginResponse } from '../../models/loginRes.model';
@@ -61,5 +62,13 @@ export class AuthService {
 
   getRole(): Observable<any>{
       return this.http.get<Response<number>>(credencialServiceUrl.getUserRole());
+  }
+
+  changePassword(email:string, old_password:string, newPassword:string) : Observable<any>{
+    return this.http.get<Response<string>>(adminServiceUrls.changePassword(email,old_password,newPassword));
+  }
+
+  forgetPassword(email:string, password:string) : Observable<any>{
+    return this.http.get<Response<string>>('');
   }
 }

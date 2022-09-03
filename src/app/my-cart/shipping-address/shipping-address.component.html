@@ -1,1 +1,18 @@
-<p>shipping-address works!</p>
+<h1 style="margin:20px">Your Shipping Items:</h1>
+
+
+<div class="wrapper">
+    <div class="item" *ngFor="let x of shippingItems">
+        <div class="itms">
+            <h3 class="title">{{x.name}}</h3>
+            <img [src]= x.imgUrl class="img">
+        </div>
+        <div class="itms">
+            <p>Total Amount:{{x.quantity}}</p>
+            <p class="price">Price:${{x.price}}</p>
+            <button class="order"> Cancal  </button>
+            <h3 style="margin-top: 10px;">Delivery Status</h3>
+            <p style="margin: 10px; margin-left: 40px; color: blue;">In progress</p>
+        </div>
+    </div>
+</div>

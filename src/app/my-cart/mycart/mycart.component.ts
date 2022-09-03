@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { CartItem } from 'src/app/models/cart-item.model';
 import { CartService } from 'src/app/shared/services/cart.service';
 
@@ -59,6 +58,21 @@ export class MycartComponent implements OnInit{
   }
 
   orderAll(items: CartItem[]){
-      
+      items.forEach(item => {
+        this.order(item);
+      });
+      this.getCartItems();
+  }
+
+  order(item: CartItem){
+    this.cartService.saveShippinItem(item).subscribe(res=>{
+      if(res.isError){
+        console.log(res.errorMessage);
+      }
+      else{
+        console.log(res.result);
+        this.getCartItems();
+      }
+    })
   }
 }

@@ -8,6 +8,7 @@ import { Response } from '../../models/response.model';
 import { DataTransferDto } from '../../models/DataTransferDto';
 import { ActionMode } from '../../models/enum';
 import { User } from '../../models/user.model';
+import { ShippingItem } from 'src/app/models/shipping.model';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +31,15 @@ export class CartService {
   }
 
   saveShippingData(data:User): Observable<any>{
-    return this.http.post('',data)
+    return this.http.post("",data)
+  }
+
+  saveShippinItem(data: CartItem){
+    return this.http.post<Response<string>>(cartServiceUrls.saveShippingItem(),data);
+  }
+
+  getShippingDataItems(): Observable<any>{
+    return this.http.get<Response<ShippingItem[]>>(cartServiceUrls.getShippingItems());
   }
 
   getById(id:number): Observable<any>{

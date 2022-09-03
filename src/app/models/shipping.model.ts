@@ -1,5 +1,5 @@
-export class CartItem{
-    id:number;
+export class ShippingItem{
+    id:number
     name:string;
     imgUrl:string;
     price:number;

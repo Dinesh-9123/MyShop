@@ -1,23 +1,21 @@
-<div class = "total">
-    <span>Total Amount</span>
-    <span class="amount-total">${{totalAmount}}</span>
+<div style="color: black; margin:20px; display:flex; justify-content:flex-end">
+  <h2>Total Amount: {{totalAmount}}</h2>
+  <button class="order" (click)="orderAll(cartItems)">Order All</button>
 </div>
-<div class = "actions">
-  <button class = "button">Order</button>
-  </div>
 
 <div class="wrapper">
-    <div *ngFor="let x of cartItems">
-      <li class="cart-item"> 
-        <h2>{{x.name}}</h2>
-        <div class= "summary">
-          <span style="margin-left: 80px;" class = "price">${{x.price}}</span>
-        </div>     
-        <div class = "actions">
-          <button (click)="removeFromCart(x)">−</button>
-          <span class = "amount">{{x.quantity}}</span>
-          <button (click)="addMoreInCart(x)">+</button>
-        </div>
-      </li>
+  <div class="item" *ngFor="let x of cartItems">
+    <h3 class="title">{{x.name}}</h3>
+    <div class="col">
+      <p class="price">${{x.price}}</p>
+      <div class="actions">
+        <button class="button" (click)="removeFromCart(x)">-</button>
+        <span class="amount">{{x.quantity}}</span>
+        <button class="buttion" (click)="addMoreInCart(x)">+</button>
+      </div>
     </div>
+    <div style="display: flex; justify-content:flex-end">
+      <button class="order" (click)="order(x)">Order now</button>
+    </div>
+  </div>
 </div>

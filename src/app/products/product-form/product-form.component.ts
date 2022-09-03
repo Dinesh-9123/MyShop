@@ -59,7 +59,7 @@ export class ProductFormComponent implements OnInit {
         }
         else{
           this.Reset();
-          this.route.navigateByUrl('/products/admin-products')
+          this.route.navigateByUrl('/admin-products')
         }
       })
     }
